@@ -1,1 +1,1201 @@
+<!DOCTYPE html>
+<html lang="ne" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="मानस कृषि सहकारी संस्था — कैलाली, नेपाल। किसानहरूको आर्थिक समृद्धि र कृषि विकासका लागि समर्पित।" />
+  <meta name="keywords" content="agriculture cooperative, kailali nepal, krishi sahakari, farm loan, micro savings, Manas cooperative" />
+  <title>मानस कृषि सहकारी संस्था | Manas Agriculture Cooperative – Kailali, Nepal</title>
 
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Mukta (Nepali/Latin) + Inter (English utility) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            /* Core palette */
+            forest:  { DEFAULT: '#1a6b3a', light: '#2d8f52', dark: '#0f4424', xlight: '#e8f5ee' },
+            amber:   { DEFAULT: '#d97706', light: '#f59e0b', dark: '#92400e', xlight: '#fef3c7' },
+            earth:   { DEFAULT: '#78350f', light: '#a16207' },
+            cream:   '#fdfaf4',
+          },
+          fontFamily: {
+            sans: ['Mukta', 'Inter', 'sans-serif'],
+            body: ['Inter', 'Mukta', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ─── Base ─────────────────────────────── */
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Mukta', 'Inter', sans-serif; }
+
+    /* ─── Hero gradient overlay ─────────────── */
+    .hero-overlay {
+      background: linear-gradient(
+        135deg,
+        rgba(10,40,20,0.82) 0%,
+        rgba(15,68,36,0.72) 50%,
+        rgba(146,64,14,0.55) 100%
+      );
+    }
+
+    /* ─── Animated leaf ticker ──────────────── */
+    @keyframes ticker {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .ticker-inner { animation: ticker 28s linear infinite; }
+    .ticker-inner:hover { animation-play-state: paused; }
+
+    /* ─── Card hover lift ───────────────────── */
+    .card-lift { transition: transform 0.22s ease, box-shadow 0.22s ease; }
+    .card-lift:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.10); }
+
+    /* ─── Gradient text ─────────────────────── */
+    .gradient-text {
+      background: linear-gradient(90deg, #1a6b3a, #d97706);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ─── Section divider leaf ──────────────── */
+    .leaf-divider::before {
+      content: '🌿';
+      display: block;
+      text-align: center;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      opacity: 0.6;
+    }
+
+    /* ─── Scrollbar thin ────────────────────── */
+    .notice-scroll::-webkit-scrollbar { width: 4px; }
+    .notice-scroll::-webkit-scrollbar-track { background: #f0fdf4; }
+    .notice-scroll::-webkit-scrollbar-thumb { background: #2d8f52; border-radius: 4px; }
+
+    /* ─── Focus ring ────────────────────────── */
+    :focus-visible { outline: 3px solid #d97706; outline-offset: 2px; }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800 antialiased">
+
+<!-- ════════════════════════════════════════════
+     TOP UTILITY BAR
+════════════════════════════════════════════ -->
+<div class="bg-forest-dark text-white text-sm py-1.5 px-4">
+  <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+    <!-- Live ticker -->
+    <div class="flex items-center gap-2 overflow-hidden max-w-xs sm:max-w-md">
+      <span class="shrink-0 bg-amber text-white text-xs font-bold px-2 py-0.5 rounded uppercase tracking-wide">सूचना</span>
+      <div class="overflow-hidden">
+        <div class="ticker-inner whitespace-nowrap text-amber-light">
+          🌾 धान बिउ वितरण कार्यक्रम असार ५ गतेदेखि सुरु &nbsp;•&nbsp; 📢 साधारण सभा: असार १५, २०८२ &nbsp;•&nbsp; 💰 लाभांश वितरण शुरू भएको छ &nbsp;•&nbsp; 🌿 जैविक खेती प्रशिक्षण भर्ना खुल्ला &nbsp;•&nbsp; 🌾 धान बिउ वितरण कार्यक्रम असार ५ गतेदेखि सुरु &nbsp;•&nbsp; 📢 साधारण सभा: असार १५, २०८२ &nbsp;•&nbsp; 💰 लाभांश वितरण शुरू भएको छ &nbsp;•&nbsp; 🌿 जैविक खेती प्रशिक्षण भर्ना खुल्ला
+        </div>
+      </div>
+    </div>
+
+    <!-- Language switcher + contact -->
+    <div class="flex items-center gap-4 shrink-0">
+      <span class="text-gray-400 hidden sm:inline">☎ ०९१-५२३४५६</span>
+      <div class="flex items-center border border-forest-light rounded overflow-hidden text-xs font-semibold">
+        <button id="lang-ne" onclick="setLang('ne')" class="px-3 py-1 bg-amber text-white transition">नेपाली</button>
+        <button id="lang-en" onclick="setLang('en')" class="px-3 py-1 text-gray-300 hover:bg-forest-light transition">English</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     HEADER / NAVBAR
+════════════════════════════════════════════ -->
+<header class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+  <nav class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between" aria-label="Main Navigation">
+
+    <!-- Logo + Name -->
+    <a href="#hero" class="flex items-center gap-3 group">
+      <!-- SVG leaf-and-sheaf logo mark -->
+      <div class="w-12 h-12 rounded-xl bg-forest flex items-center justify-center shadow group-hover:shadow-md transition">
+        <svg viewBox="0 0 48 48" fill="none" class="w-8 h-8" aria-hidden="true">
+          <!-- wheat stalk -->
+          <path d="M24 38 L24 16" stroke="#fef3c7" stroke-width="2" stroke-linecap="round"/>
+          <!-- left grain -->
+          <ellipse cx="19" cy="20" rx="4" ry="7" fill="#f59e0b" transform="rotate(-20 19 20)"/>
+          <!-- right grain -->
+          <ellipse cx="29" cy="20" rx="4" ry="7" fill="#f59e0b" transform="rotate(20 29 20)"/>
+          <!-- leaf -->
+          <path d="M24 28 Q18 22 14 26 Q18 32 24 28Z" fill="#6ee7b7"/>
+          <!-- roots -->
+          <path d="M24 38 Q20 42 17 40 M24 38 Q28 42 31 40" stroke="#fef3c7" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="leading-tight">
+        <div class="font-extrabold text-forest text-base sm:text-lg leading-none" id="logo-ne">मानस कृषि सहकारी</div>
+        <div class="font-extrabold text-forest text-base sm:text-lg leading-none hidden" id="logo-en">Manas Agriculture Cooperative</div>
+        <div class="text-xs text-amber font-medium tracking-wide" id="logo-sub-ne">संस्था लि. • कैलाली, नेपाल</div>
+        <div class="text-xs text-amber font-medium tracking-wide hidden" id="logo-sub-en">Ltd. • Kailali, Nepal</div>
+      </div>
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <ul class="hidden lg:flex items-center gap-1 text-sm font-semibold" id="nav-links">
+      <li><a href="#hero"     class="nav-link px-3 py-2 rounded-lg text-forest hover:bg-forest-xlight transition" data-ne="गृहपृष्ठ"      data-en="Home">गृहपृष्ठ</a></li>
+      <li><a href="#about"    class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:bg-forest-xlight hover:text-forest transition" data-ne="हाम्रो बारेमा"  data-en="About Us">हाम्रो बारेमा</a></li>
+      <li><a href="#services" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:bg-forest-xlight hover:text-forest transition" data-ne="सेवाहरू"        data-en="Services">सेवाहरू</a></li>
+      <li><a href="#notices"  class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:bg-forest-xlight hover:text-forest transition" data-ne="सूचना पाटी"    data-en="Notices">सूचना पाटी</a></li>
+      <li><a href="#calculator" class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:bg-forest-xlight hover:text-forest transition" data-ne="ब्याज क्याल्कुलेटर" data-en="Calculator">ब्याज क्याल्कुलेटर</a></li>
+      <li><a href="#contact"  class="nav-link px-3 py-2 rounded-lg text-gray-700 hover:bg-forest-xlight hover:text-forest transition" data-ne="सम्पर्क"        data-en="Contact">सम्पर्क</a></li>
+    </ul>
+
+    <!-- CTA + Hamburger -->
+    <div class="flex items-center gap-3">
+      <a href="#member" class="hidden sm:inline-flex items-center gap-2 bg-forest hover:bg-forest-light text-white text-sm font-bold px-4 py-2 rounded-xl transition shadow" id="nav-cta" data-ne="सदस्य बन्नुहोस्" data-en="Become a Member">
+        <i data-lucide="user-plus" class="w-4 h-4"></i>
+        <span>सदस्य बन्नुहोस्</span>
+      </a>
+      <!-- Hamburger -->
+      <button id="menu-btn" onclick="toggleMenu()" class="lg:hidden p-2 rounded-lg text-forest hover:bg-forest-xlight transition" aria-label="Toggle menu">
+        <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-100 bg-white px-4 pb-4">
+    <ul class="flex flex-col gap-1 pt-3 text-sm font-semibold">
+      <li><a href="#hero"     onclick="toggleMenu()" class="block px-3 py-2.5 rounded-lg text-forest hover:bg-forest-xlight">गृहपृष्ठ / Home</a></li>
+      <li><a href="#about"    onclick="toggleMenu()" class="block px-3 py-2.5 rounded-lg text-gray-700 hover:bg-forest-xlight">हाम्रो बारेमा / About</a></li>
+      <li><a href="#services" onclick="toggleMenu()" class="block px-3 py-2.5 rounded-lg text-gray-700 hover:bg-forest-xlight">सेवाहरू / Services</a></li>
+      <li><a href="#notices"  onclick="toggleMenu()" class="block px-3 py-2.5 rounded-lg text-gray-700 hover:bg-forest-xlight">सूचना पाटी / Notices</a></li>
+      <li><a href="#calculator" onclick="toggleMenu()" class="block px-3 py-2.5 rounded-lg text-gray-700 hover:bg-forest-xlight">ब्याज क्याल्कुलेटर</a></li>
+      <li><a href="#contact"  onclick="toggleMenu()" class="block px-3 py-2.5 rounded-lg text-gray-700 hover:bg-forest-xlight">सम्पर्क / Contact</a></li>
+      <li class="pt-2">
+        <a href="#member" onclick="toggleMenu()" class="flex items-center justify-center gap-2 bg-forest text-white font-bold px-4 py-3 rounded-xl">
+          <i data-lucide="user-plus" class="w-4 h-4"></i> सदस्य बन्नुहोस्
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+
+<!-- ════════════════════════════════════════════
+     HERO SECTION
+════════════════════════════════════════════ -->
+<section id="hero" aria-label="Hero Banner"
+  class="relative min-h-screen flex items-center overflow-hidden"
+  style="background: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&q=80') center/cover no-repeat;">
+
+  <!-- Overlay -->
+  <div class="hero-overlay absolute inset-0"></div>
+
+  <!-- Decorative wheat pattern -->
+  <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22><text y=%2245%22 font-size=%2240%22>🌾</text></svg>'); background-size: 60px 60px;"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 py-24 grid lg:grid-cols-2 gap-12 items-center">
+
+    <!-- Left: Headline -->
+    <div class="text-white">
+      <!-- Eyebrow -->
+      <div class="inline-flex items-center gap-2 bg-amber/20 border border-amber/40 text-amber-light text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
+        <span>🌱</span>
+        <span>कैलाली, सुदूरपश्चिम प्रदेश</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
+        कृषि क्रान्ति र<br/>
+        <span class="text-amber-light">आर्थिक समृद्धिको</span><br/>
+        सहयात्री
+      </h1>
+
+      <p class="text-gray-200 text-lg sm:text-xl mb-3 max-w-lg font-medium">
+        The partner of Agricultural Revolution and Economic Prosperity
+      </p>
+
+      <p class="text-gray-300 text-base max-w-lg mb-10 leading-relaxed">
+        मानस कृषि सहकारी संस्था — किसानहरूलाई आधुनिक कृषि ज्ञान, वित्तीय सेवा र सामुदायिक साझेदारीमार्फत समृद्ध जीवनतर्फ अग्रसर गर्दै।
+      </p>
+
+      <div class="flex flex-wrap gap-4">
+        <a href="#about" class="flex items-center gap-2 bg-forest hover:bg-forest-light text-white font-bold px-7 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition text-base">
+          <i data-lucide="info" class="w-5 h-5"></i>
+          हाम्रो बारेमा जान्नुहोस्
+        </a>
+        <a href="#member" id="hero-cta-2" class="flex items-center gap-2 bg-amber hover:bg-amber-light text-white font-bold px-7 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition text-base">
+          <i data-lucide="user-plus" class="w-5 h-5"></i>
+          सदस्य बन्नुहोस्
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Stats card -->
+    <div class="hidden lg:block">
+      <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8 text-white">
+        <h2 class="text-lg font-bold text-amber-light mb-6 flex items-center gap-2">
+          <i data-lucide="bar-chart-2" class="w-5 h-5"></i>
+          हाम्रा उपलब्धिहरू
+        </h2>
+        <div class="grid grid-cols-2 gap-5">
+          <!-- Stat -->
+          <div class="bg-white/10 rounded-xl p-4 text-center">
+            <div class="text-4xl font-extrabold text-amber-light">२,८००+</div>
+            <div class="text-sm text-gray-200 mt-1">सक्रिय सदस्यहरू</div>
+          </div>
+          <div class="bg-white/10 rounded-xl p-4 text-center">
+            <div class="text-4xl font-extrabold text-amber-light">१५+</div>
+            <div class="text-sm text-gray-200 mt-1">वर्षको अनुभव</div>
+          </div>
+          <div class="bg-white/10 rounded-xl p-4 text-center">
+            <div class="text-4xl font-extrabold text-amber-light">रू. ४Cr+</div>
+            <div class="text-sm text-gray-200 mt-1">कर्जा लगानी</div>
+          </div>
+          <div class="bg-white/10 rounded-xl p-4 text-center">
+            <div class="text-4xl font-extrabold text-amber-light">१२%</div>
+            <div class="text-sm text-gray-200 mt-1">वार्षिक लाभांश</div>
+          </div>
+        </div>
+
+        <!-- Quick links inside stats card -->
+        <div class="mt-6 grid grid-cols-2 gap-3 text-sm">
+          <a href="#calculator" class="flex items-center gap-2 bg-forest hover:bg-forest-light px-3 py-2.5 rounded-lg transition font-semibold">
+            <i data-lucide="calculator" class="w-4 h-4"></i> ब्याज हेर्नुहोस्
+          </a>
+          <a href="#notices" class="flex items-center gap-2 bg-amber/80 hover:bg-amber px-3 py-2.5 rounded-lg transition font-semibold">
+            <i data-lucide="bell" class="w-4 h-4"></i> ताजा सूचना
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scroll cue -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-white/60">
+    <i data-lucide="chevron-down" class="w-7 h-7"></i>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     MOBILE STATS (shown below hero on mobile)
+════════════════════════════════════════════ -->
+<div class="lg:hidden bg-forest text-white px-4 py-6">
+  <div class="grid grid-cols-2 gap-3 max-w-md mx-auto">
+    <div class="bg-white/10 rounded-xl p-4 text-center">
+      <div class="text-3xl font-extrabold text-amber-light">२,८००+</div>
+      <div class="text-xs text-gray-200 mt-1">सक्रिय सदस्यहरू</div>
+    </div>
+    <div class="bg-white/10 rounded-xl p-4 text-center">
+      <div class="text-3xl font-extrabold text-amber-light">१५+ वर्ष</div>
+      <div class="text-xs text-gray-200 mt-1">विश्वासयोग्य सेवा</div>
+    </div>
+    <div class="bg-white/10 rounded-xl p-4 text-center">
+      <div class="text-3xl font-extrabold text-amber-light">रू. ४Cr+</div>
+      <div class="text-xs text-gray-200 mt-1">कर्जा लगानी</div>
+    </div>
+    <div class="bg-white/10 rounded-xl p-4 text-center">
+      <div class="text-3xl font-extrabold text-amber-light">१२%</div>
+      <div class="text-xs text-gray-200 mt-1">वार्षिक लाभांश</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     ABOUT / INTRODUCTION
+════════════════════════════════════════════ -->
+<section id="about" class="py-20 bg-cream" aria-label="About Us">
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- Section header -->
+    <div class="text-center mb-14 leaf-divider">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber">हाम्रो परिचय</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-forest mt-2">मानस कृषि सहकारी संस्थाबारे</h2>
+      <p class="text-gray-500 mt-2 text-sm">About Manas Agriculture Cooperative</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+      <!-- Image side -->
+      <div class="relative">
+        <div class="rounded-2xl overflow-hidden shadow-xl aspect-[4/3]">
+          <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800&q=80"
+               alt="किसानहरू खेतमा काम गर्दै — Farmers working in the field"
+               class="w-full h-full object-cover" loading="lazy" />
+        </div>
+        <!-- Floating badge -->
+        <div class="absolute -bottom-5 -right-3 sm:right-4 bg-amber text-white rounded-2xl px-5 py-3 shadow-xl">
+          <div class="text-2xl font-extrabold leading-none">२०६५</div>
+          <div class="text-xs font-semibold mt-0.5 opacity-90">स्थापना वर्ष</div>
+        </div>
+      </div>
+
+      <!-- Text side -->
+      <div>
+        <p class="text-gray-700 text-base sm:text-lg leading-relaxed mb-5">
+          <strong class="text-forest">मानस कृषि सहकारी संस्था लि.</strong> कैलाली जिल्लाका किसान र ग्रामीण समुदायहरूलाई कृषि उत्पादन वृद्धि, आर्थिक स्वावलम्बन र सामूहिक विकासमा सहयोग गर्न स्थापना भएको संस्था हो।
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-8">
+          हामी आधुनिक खेती प्रविधि, किफायती ऋण, बिउ-विजन वितरण, र सामूहिक बचत जस्ता कार्यक्रमहरूमार्फत किसानहरूको जीवनस्तर उकास्न प्रयत्नशील छौं।
+        </p>
+
+        <!-- Mission / Vision cards -->
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="bg-forest-xlight border-l-4 border-forest rounded-xl p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="target" class="w-5 h-5 text-forest"></i>
+              <h3 class="font-bold text-forest text-sm">हाम्रो लक्ष्य (Mission)</h3>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed">किसानहरूलाई आधुनिक कृषि ज्ञान र वित्तीय पहुँच प्रदान गरी दिगो आर्थिक विकास गर्नु।</p>
+          </div>
+          <div class="bg-amber-xlight border-l-4 border-amber rounded-xl p-5">
+            <div class="flex items-center gap-2 mb-2">
+              <i data-lucide="eye" class="w-5 h-5 text-amber"></i>
+              <h3 class="font-bold text-earth text-sm">हाम्रो दृष्टिकोण (Vision)</h3>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed">समृद्ध कृषि समुदाय — जहाँ प्रत्येक किसानले आफ्नो श्रमको उचित मूल्य पाउन सकोस्।</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     CORE SERVICES
+════════════════════════════════════════════ -->
+<section id="services" class="py-20 bg-white" aria-label="Our Services">
+  <div class="max-w-7xl mx-auto px-4">
+
+    <div class="text-center mb-14 leaf-divider">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber">सेवाहरू</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-forest mt-2">हाम्रा मुख्य सेवाहरू</h2>
+      <p class="text-gray-500 mt-2 text-sm">Core Services We Offer</p>
+    </div>
+
+    <!-- Big two-column split -->
+    <div class="grid lg:grid-cols-2 gap-8 mb-12">
+
+      <!-- Agricultural Services card -->
+      <div class="bg-forest-xlight rounded-2xl overflow-hidden shadow-md card-lift">
+        <div class="bg-forest px-6 py-5 flex items-center gap-3">
+          <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
+            <i data-lucide="sprout" class="w-6 h-6 text-white"></i>
+          </div>
+          <div>
+            <h3 class="text-white font-extrabold text-lg">कृषि सेवाहरू</h3>
+            <p class="text-green-200 text-xs">Agricultural Services</p>
+          </div>
+        </div>
+        <div class="p-6 space-y-4">
+          <!-- Service item -->
+          <div class="flex gap-4 items-start bg-white rounded-xl p-4 shadow-sm">
+            <div class="w-9 h-9 bg-forest-xlight rounded-lg flex items-center justify-center shrink-0">
+              <i data-lucide="layers" class="w-5 h-5 text-forest"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-forest text-sm">माटो व्यवस्थापन</h4>
+              <p class="text-gray-500 text-xs mt-0.5">माटो परीक्षण, उर्वरता सुधार र जैविक मलखाद वितरण सेवा।</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start bg-white rounded-xl p-4 shadow-sm">
+            <div class="w-9 h-9 bg-forest-xlight rounded-lg flex items-center justify-center shrink-0">
+              <i data-lucide="seed" class="w-5 h-5 text-forest"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-forest text-sm">बिउ तथा मलखाद वितरण</h4>
+              <p class="text-gray-500 text-xs mt-0.5">उन्नत जातका बिउ, रासायनिक तथा जैविक मलखाद सदस्यहरूलाई सहुलियत मूल्यमा।</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start bg-white rounded-xl p-4 shadow-sm">
+            <div class="w-9 h-9 bg-forest-xlight rounded-lg flex items-center justify-center shrink-0">
+              <i data-lucide="tractor" class="w-5 h-5 text-forest"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-forest text-sm">आधुनिक कृषि औजार</h4>
+              <p class="text-gray-500 text-xs mt-0.5">ट्र्याक्टर, थ्रेसर, र सिँचाइ उपकरणहरू भाडामा तथा किस्तामा।</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start bg-white rounded-xl p-4 shadow-sm">
+            <div class="w-9 h-9 bg-forest-xlight rounded-lg flex items-center justify-center shrink-0">
+              <i data-lucide="graduation-cap" class="w-5 h-5 text-forest"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-forest text-sm">कृषि प्रशिक्षण</h4>
+              <p class="text-gray-500 text-xs mt-0.5">आधुनिक खेती प्रविधि, जैविक खेती र पोषण बगैँचा प्रशिक्षण।</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Financial Services card -->
+      <div class="bg-amber-xlight rounded-2xl overflow-hidden shadow-md card-lift">
+        <div class="bg-amber px-6 py-5 flex items-center gap-3">
+          <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
+            <i data-lucide="landmark" class="w-6 h-6 text-white"></i>
+          </div>
+          <div>
+            <h3 class="text-white font-extrabold text-lg">वित्तीय सेवाहरू</h3>
+            <p class="text-yellow-100 text-xs">Financial Services</p>
+          </div>
+        </div>
+        <div class="p-6 space-y-4">
+          <div class="flex gap-4 items-start bg-white rounded-xl p-4 shadow-sm">
+            <div class="w-9 h-9 bg-amber-xlight rounded-lg flex items-center justify-center shrink-0">
+              <i data-lucide="piggy-bank" class="w-5 h-5 text-amber"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-earth text-sm">लघु बचत योजना</h4>
+              <p class="text-gray-500 text-xs mt-0.5">नियमित बचत गर्ने सदस्यहरूलाई आकर्षक ब्याज दरमा बचत सुविधा।</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start bg-white rounded-xl p-4 shadow-sm">
+            <div class="w-9 h-9 bg-amber-xlight rounded-lg flex items-center justify-center shrink-0">
+              <i data-lucide="credit-card" class="w-5 h-5 text-amber"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-earth text-sm">कृषि कर्जा</h4>
+              <p class="text-gray-500 text-xs mt-0.5">खेती, पशुपालन र कृषि व्यापारका लागि सहुलियत दरमा ऋण।</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start bg-white rounded-xl p-4 shadow-sm">
+            <div class="w-9 h-9 bg-amber-xlight rounded-lg flex items-center justify-center shrink-0">
+              <i data-lucide="trending-up" class="w-5 h-5 text-amber"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-earth text-sm">शेयर सदस्यता</h4>
+              <p class="text-gray-500 text-xs mt-0.5">संस्थाको शेयर सदस्य बनेर वार्षिक लाभांश र मताधिकार प्राप्त गर्नुहोस्।</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start bg-white rounded-xl p-4 shadow-sm">
+            <div class="w-9 h-9 bg-amber-xlight rounded-lg flex items-center justify-center shrink-0">
+              <i data-lucide="shield-check" class="w-5 h-5 text-amber"></i>
+            </div>
+            <div>
+              <h4 class="font-bold text-earth text-sm">बीमा सहयोग</h4>
+              <p class="text-gray-500 text-xs mt-0.5">कृषि बीमा दर्ता र दाबी प्रक्रियामा सदस्यहरूलाई निःशुल्क सहयोग।</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Market Prices Strip -->
+    <div class="bg-forest rounded-2xl p-6 text-white">
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+        <h3 class="font-bold text-lg flex items-center gap-2">
+          <i data-lucide="bar-chart" class="w-5 h-5 text-amber-light"></i>
+          आजको बजार मूल्य <span class="text-green-300 text-sm font-normal ml-1">(Today's Market Price)</span>
+        </h3>
+        <span class="text-xs text-gray-400">अद्यावधिक: असार ४, २०८२</span>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div class="bg-white/10 rounded-xl p-3 text-center">
+          <div class="text-2xl">🌾</div>
+          <div class="font-bold text-amber-light mt-1">रू. ३,२५०</div>
+          <div class="text-xs text-gray-300">धान (प्रति क्वि.)</div>
+        </div>
+        <div class="bg-white/10 rounded-xl p-3 text-center">
+          <div class="text-2xl">🌽</div>
+          <div class="font-bold text-amber-light mt-1">रू. २,१००</div>
+          <div class="text-xs text-gray-300">मकै (प्रति क्वि.)</div>
+        </div>
+        <div class="bg-white/10 rounded-xl p-3 text-center">
+          <div class="text-2xl">🥔</div>
+          <div class="font-bold text-amber-light mt-1">रू. १,८५०</div>
+          <div class="text-xs text-gray-300">आलु (प्रति क्वि.)</div>
+        </div>
+        <div class="bg-white/10 rounded-xl p-3 text-center">
+          <div class="text-2xl">🌿</div>
+          <div class="font-bold text-amber-light mt-1">रू. ४,५००</div>
+          <div class="text-xs text-gray-300">गहुँ (प्रति क्वि.)</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     NOTICE BOARD
+════════════════════════════════════════════ -->
+<section id="notices" class="py-20 bg-gray-50" aria-label="Notice Board">
+  <div class="max-w-7xl mx-auto px-4">
+
+    <div class="text-center mb-14 leaf-divider">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber">सूचना</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-forest mt-2">सूचना पाटी तथा समाचार</h2>
+      <p class="text-gray-500 mt-2 text-sm">Notice Board & Latest News</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8">
+
+      <!-- Notices list (scrollable) -->
+      <div class="lg:col-span-2">
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden">
+          <div class="bg-forest px-6 py-4 flex items-center justify-between">
+            <h3 class="text-white font-bold flex items-center gap-2">
+              <i data-lucide="bell-ring" class="w-5 h-5 text-amber-light"></i>
+              ताजा सूचनाहरू
+            </h3>
+            <button class="text-xs text-green-200 hover:text-white font-semibold">सबै हेर्नुहोस् →</button>
+          </div>
+
+          <ul class="divide-y divide-gray-100 notice-scroll overflow-y-auto max-h-96">
+
+            <!-- Notice 1 – Urgent -->
+            <li class="flex gap-4 px-6 py-5 hover:bg-forest-xlight transition">
+              <div class="shrink-0 pt-1">
+                <span class="inline-block bg-red-100 text-red-600 text-xs font-bold px-2 py-0.5 rounded-full">अत्यावश्यक</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-800 text-sm leading-snug">साधारण सभाको सूचना — असार १५, २०८२</h4>
+                <p class="text-gray-500 text-xs mt-1">वार्षिक साधारण सभा कार्यालय परिसरमा बिहान १० बजे आयोजना हुनेछ। सबै शेयर सदस्यहरू उपस्थित हुन आग्रह छ।</p>
+                <div class="flex items-center gap-3 mt-2 text-xs text-gray-400">
+                  <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3"></i> असार ४, २०८२</span>
+                  <span>•</span>
+                  <a href="#" class="text-forest font-semibold hover:underline">विस्तृत पढ्नुहोस्</a>
+                </div>
+              </div>
+            </li>
+
+            <!-- Notice 2 -->
+            <li class="flex gap-4 px-6 py-5 hover:bg-forest-xlight transition">
+              <div class="shrink-0 pt-1">
+                <span class="inline-block bg-amber-xlight text-amber text-xs font-bold px-2 py-0.5 rounded-full">सूचना</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-800 text-sm leading-snug">उन्नत धान बिउ वितरण कार्यक्रम सुरु</h4>
+                <p class="text-gray-500 text-xs mt-1">सुपर बासमती तथा सम्भा महसुरी जातको धान बिउ सदस्यहरूलाई असार ५ देखि वितरण गरिनेछ।</p>
+                <div class="flex items-center gap-3 mt-2 text-xs text-gray-400">
+                  <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3"></i> जेठ २८, २०८२</span>
+                  <span>•</span>
+                  <a href="#" class="text-forest font-semibold hover:underline">विस्तृत पढ्नुहोस्</a>
+                </div>
+              </div>
+            </li>
+
+            <!-- Notice 3 -->
+            <li class="flex gap-4 px-6 py-5 hover:bg-forest-xlight transition">
+              <div class="shrink-0 pt-1">
+                <span class="inline-block bg-blue-100 text-blue-600 text-xs font-bold px-2 py-0.5 rounded-full">प्रशिक्षण</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-800 text-sm leading-snug">जैविक खेती तालिम — भर्ना खुल्ला</h4>
+                <p class="text-gray-500 text-xs mt-1">असार १०–१२ गते तीन दिवसीय जैविक खेती तालिम। सहभागिताको लागि ०९१-५२३४५६ मा सम्पर्क गर्नुहोस्।</p>
+                <div class="flex items-center gap-3 mt-2 text-xs text-gray-400">
+                  <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3"></i> जेठ २५, २०८२</span>
+                  <span>•</span>
+                  <a href="#" class="text-forest font-semibold hover:underline">विस्तृत पढ्नुहोस्</a>
+                </div>
+              </div>
+            </li>
+
+            <!-- Notice 4 -->
+            <li class="flex gap-4 px-6 py-5 hover:bg-forest-xlight transition">
+              <div class="shrink-0 pt-1">
+                <span class="inline-block bg-green-100 text-green-700 text-xs font-bold px-2 py-0.5 rounded-full">लाभांश</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-800 text-sm leading-snug">आ.व. २०८१/८२ को लाभांश वितरण प्रारम्भ</h4>
+                <p class="text-gray-500 text-xs mt-1">शेयर सदस्यहरूलाई १२% लाभांश वितरण शुरू भएको छ। परिचयपत्र सहित कार्यालयमा आउनुहोस्।</p>
+                <div class="flex items-center gap-3 mt-2 text-xs text-gray-400">
+                  <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3"></i> जेठ २०, २०८२</span>
+                  <span>•</span>
+                  <a href="#" class="text-forest font-semibold hover:underline">विस्तृत पढ्नुहोस्</a>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+      <!-- Sidebar: Quick Info + Download -->
+      <div class="space-y-6">
+
+        <!-- Commodity Price Alert -->
+        <div class="bg-white rounded-2xl shadow-md p-6">
+          <h3 class="font-bold text-gray-800 mb-4 flex items-center gap-2">
+            <i data-lucide="trending-up" class="w-5 h-5 text-amber"></i>
+            मूल्य अद्यावधिक
+          </h3>
+          <ul class="space-y-3 text-sm">
+            <li class="flex justify-between items-center border-b border-gray-100 pb-2">
+              <span class="text-gray-600">🌾 धान</span>
+              <span class="font-bold text-forest">रू. ३,२५०/क्वि.</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-gray-100 pb-2">
+              <span class="text-gray-600">🌽 मकै</span>
+              <span class="font-bold text-forest">रू. २,१००/क्वि.</span>
+            </li>
+            <li class="flex justify-between items-center border-b border-gray-100 pb-2">
+              <span class="text-gray-600">🥔 आलु</span>
+              <span class="font-bold text-forest">रू. १,८५०/क्वि.</span>
+            </li>
+            <li class="flex justify-between items-center">
+              <span class="text-gray-600">🐄 दूध</span>
+              <span class="font-bold text-forest">रू. ७२/लि.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Download links -->
+        <div class="bg-forest-xlight rounded-2xl p-6">
+          <h3 class="font-bold text-forest mb-4 flex items-center gap-2">
+            <i data-lucide="download" class="w-5 h-5"></i>
+            डाउनलोड फारम
+          </h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="flex items-center gap-3 text-sm text-gray-700 hover:text-forest font-medium group transition">
+                <span class="w-8 h-8 bg-forest/10 group-hover:bg-forest group-hover:text-white rounded-lg flex items-center justify-center transition">
+                  <i data-lucide="file-text" class="w-4 h-4"></i>
+                </span>
+                सदस्यता फारम
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center gap-3 text-sm text-gray-700 hover:text-forest font-medium group transition">
+                <span class="w-8 h-8 bg-forest/10 group-hover:bg-forest group-hover:text-white rounded-lg flex items-center justify-center transition">
+                  <i data-lucide="file-text" class="w-4 h-4"></i>
+                </span>
+                कर्जा निवेदन फारम
+              </a>
+            </li>
+            <li>
+              <a href="#" class="flex items-center gap-3 text-sm text-gray-700 hover:text-forest font-medium group transition">
+                <span class="w-8 h-8 bg-forest/10 group-hover:bg-forest group-hover:text-white rounded-lg flex items-center justify-center transition">
+                  <i data-lucide="file-text" class="w-4 h-4"></i>
+                </span>
+                वार्षिक प्रतिवेदन
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     INTEREST CALCULATOR
+════════════════════════════════════════════ -->
+<section id="calculator" class="py-20 bg-white" aria-label="Interest Calculator">
+  <div class="max-w-5xl mx-auto px-4">
+
+    <div class="text-center mb-14 leaf-divider">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber">उपकरण</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-forest mt-2">ब्याज क्याल्कुलेटर</h2>
+      <p class="text-gray-500 mt-2 text-sm">Interest &amp; Dividend Calculator</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 items-start">
+
+      <!-- Loan Interest Calculator -->
+      <div class="bg-forest-xlight rounded-2xl p-7 shadow-md">
+        <h3 class="font-extrabold text-forest text-xl mb-6 flex items-center gap-2">
+          <i data-lucide="credit-card" class="w-6 h-6 text-forest"></i>
+          कर्जा ब्याज अनुमान
+        </h3>
+
+        <div class="space-y-5">
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1.5" for="loan-amt">कर्जा रकम (रुपियाँमा)</label>
+            <input type="number" id="loan-amt" placeholder="उदा. 100000" min="1000" step="1000"
+              class="w-full border border-gray-300 rounded-xl px-4 py-3 text-gray-800 focus:ring-2 focus:ring-forest outline-none text-sm transition bg-white" />
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1.5" for="loan-rate">वार्षिक ब्याज दर (%)</label>
+            <div class="flex items-center gap-3">
+              <input type="range" id="loan-rate" min="6" max="18" step="0.5" value="12"
+                class="flex-1 accent-forest" oninput="document.getElementById('rate-display').textContent=this.value+'%'" />
+              <span id="rate-display" class="w-14 text-center font-bold text-forest bg-white border border-forest rounded-lg px-2 py-1 text-sm">12%</span>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1.5" for="loan-months">अवधि (महिनामा)</label>
+            <input type="number" id="loan-months" placeholder="उदा. 12" min="1" max="120" step="1" value="12"
+              class="w-full border border-gray-300 rounded-xl px-4 py-3 text-gray-800 focus:ring-2 focus:ring-forest outline-none text-sm bg-white" />
+          </div>
+
+          <button onclick="calcLoan()" class="w-full bg-forest hover:bg-forest-light text-white font-bold py-3 rounded-xl transition text-base flex items-center justify-center gap-2">
+            <i data-lucide="calculator" class="w-5 h-5"></i> गणना गर्नुहोस्
+          </button>
+
+          <!-- Result -->
+          <div id="loan-result" class="hidden bg-white rounded-xl p-5 border border-forest text-sm">
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <div class="text-gray-500 text-xs">मासिक किस्ता (EMI)</div>
+                <div class="text-xl font-extrabold text-forest mt-0.5" id="emi-out">—</div>
+              </div>
+              <div>
+                <div class="text-gray-500 text-xs">कुल ब्याज</div>
+                <div class="text-xl font-extrabold text-amber mt-0.5" id="interest-out">—</div>
+              </div>
+              <div class="col-span-2">
+                <div class="text-gray-500 text-xs">कुल भुक्तानी</div>
+                <div class="text-2xl font-extrabold text-gray-800 mt-0.5" id="total-out">—</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Share Dividend Info -->
+      <div class="bg-amber-xlight rounded-2xl p-7 shadow-md">
+        <h3 class="font-extrabold text-earth text-xl mb-6 flex items-center gap-2">
+          <i data-lucide="trending-up" class="w-6 h-6 text-amber"></i>
+          शेयर लाभांश जानकारी
+        </h3>
+
+        <div class="space-y-5">
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1.5" for="shares">शेयर संख्या (कित्ता)</label>
+            <input type="number" id="shares" placeholder="उदा. 100" min="10" step="10"
+              class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:ring-2 focus:ring-amber outline-none text-sm bg-white" />
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1.5">प्रति शेयर मूल्य</label>
+            <div class="bg-white border border-gray-200 rounded-xl px-4 py-3 font-bold text-amber text-sm">रू. १०० प्रति कित्ता</div>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1.5">लाभांश दर (आ.व. २०८१/८२)</label>
+            <div class="bg-white border border-gray-200 rounded-xl px-4 py-3 font-bold text-amber text-sm">१२% वार्षिक</div>
+          </div>
+
+          <button onclick="calcDividend()" class="w-full bg-amber hover:bg-amber-light text-white font-bold py-3 rounded-xl transition text-base flex items-center justify-center gap-2">
+            <i data-lucide="calculator" class="w-5 h-5"></i> लाभांश गणना गर्नुहोस्
+          </button>
+
+          <div id="div-result" class="hidden bg-white rounded-xl p-5 border border-amber text-sm">
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <div class="text-gray-500 text-xs">कुल लगानी</div>
+                <div class="text-xl font-extrabold text-gray-800 mt-0.5" id="invest-out">—</div>
+              </div>
+              <div>
+                <div class="text-gray-500 text-xs">वार्षिक लाभांश</div>
+                <div class="text-xl font-extrabold text-amber mt-0.5" id="dividend-out">—</div>
+              </div>
+            </div>
+            <p class="text-xs text-gray-400 mt-3">* लाभांश बोर्ड निर्णयमा परिवर्तन हुन सक्छ।</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     MEMBER JOIN CTA BAND
+════════════════════════════════════════════ -->
+<section id="member" class="py-16 bg-gradient-to-r from-forest-dark via-forest to-forest-light text-white" aria-label="Become a Member">
+  <div class="max-w-5xl mx-auto px-4 text-center">
+    <div class="text-5xl mb-4">🌿</div>
+    <h2 class="text-3xl sm:text-4xl font-extrabold mb-3">आजै सदस्य बन्नुहोस्</h2>
+    <p class="text-green-200 text-lg max-w-2xl mx-auto mb-2">Become a Member Today</p>
+    <p class="text-green-100 text-sm max-w-xl mx-auto mb-10 leading-relaxed">
+      मात्र रू. ५,०००को न्यूनतम शेयर लगानीमा मानस कृषि सहकारीको सदस्य बनी कृषि ऋण, बचत सुविधा, र वार्षिक लाभांशको सुविधा उठाउनुहोस्।
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="#contact" class="flex items-center gap-2 bg-amber hover:bg-amber-light text-white font-bold px-8 py-4 rounded-2xl text-base shadow-lg transition">
+        <i data-lucide="user-plus" class="w-5 h-5"></i> सदस्यता फारम भर्नुहोस्
+      </a>
+      <a href="tel:09152345678" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-4 rounded-2xl text-base border border-white/30 transition">
+        <i data-lucide="phone" class="w-5 h-5"></i> फोन गर्नुहोस्
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     CONTACT SECTION
+════════════════════════════════════════════ -->
+<section id="contact" class="py-20 bg-gray-50" aria-label="Contact Us">
+  <div class="max-w-7xl mx-auto px-4">
+
+    <div class="text-center mb-14 leaf-divider">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber">सम्पर्क</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-forest mt-2">सम्पर्क गर्नुहोस्</h2>
+      <p class="text-gray-500 mt-2 text-sm">Get In Touch With Us</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8">
+
+      <!-- Contact Info -->
+      <div class="space-y-5">
+        <div class="bg-white rounded-2xl p-6 shadow-sm flex gap-4 items-start card-lift">
+          <div class="w-11 h-11 bg-forest-xlight rounded-xl flex items-center justify-center shrink-0">
+            <i data-lucide="map-pin" class="w-6 h-6 text-forest"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-800 text-sm mb-1">ठेगाना</h3>
+            <p class="text-gray-600 text-sm">ढकैरी गाउँपालिका, कैलाली<br/>सुदूरपश्चिम प्रदेश, नेपाल</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm flex gap-4 items-start card-lift">
+          <div class="w-11 h-11 bg-amber-xlight rounded-xl flex items-center justify-center shrink-0">
+            <i data-lucide="phone" class="w-6 h-6 text-amber"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-800 text-sm mb-1">फोन नम्बर</h3>
+            <a href="tel:09152345678" class="text-forest font-semibold text-sm hover:underline">०९१-५२३४५६</a><br/>
+            <a href="tel:9841000000" class="text-gray-500 text-sm hover:underline">९८४१-०००-०००</a>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm flex gap-4 items-start card-lift">
+          <div class="w-11 h-11 bg-blue-50 rounded-xl flex items-center justify-center shrink-0">
+            <i data-lucide="mail" class="w-6 h-6 text-blue-500"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-800 text-sm mb-1">इमेल</h3>
+            <a href="mailto:info@manascooperative.coop.np" class="text-forest font-semibold text-sm hover:underline">info@manascooperative.coop.np</a>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow-sm flex gap-4 items-start card-lift">
+          <div class="w-11 h-11 bg-green-50 rounded-xl flex items-center justify-center shrink-0">
+            <i data-lucide="clock" class="w-6 h-6 text-green-600"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-800 text-sm mb-1">कार्यालय समय</h3>
+            <p class="text-gray-600 text-sm">आइतबार – शुक्रबार: बिहान ९ – साँझ ५<br/>शनिबार: बिहान ९ – दिउँसो १ बजेसम्म</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="lg:col-span-2 bg-white rounded-2xl shadow-md p-8">
+        <h3 class="font-extrabold text-forest text-xl mb-6">सन्देश पठाउनुहोस्</h3>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1.5" for="c-name">पूरा नाम *</label>
+            <input type="text" id="c-name" placeholder="तपाईंको नाम"
+              class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-forest outline-none transition" />
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1.5" for="c-phone">मोबाइल नम्बर *</label>
+            <input type="tel" id="c-phone" placeholder="९८XX-XXX-XXX"
+              class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-forest outline-none transition" />
+          </div>
+          <div class="sm:col-span-2">
+            <label class="block text-sm font-semibold text-gray-700 mb-1.5" for="c-subject">विषय</label>
+            <select id="c-subject" class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-forest outline-none bg-white transition">
+              <option value="">-- विषय छान्नुहोस् --</option>
+              <option>सदस्यता सम्बन्धी</option>
+              <option>कर्जा सम्बन्धी</option>
+              <option>बचत सम्बन्धी</option>
+              <option>कृषि सेवा सम्बन्धी</option>
+              <option>अन्य</option>
+            </select>
+          </div>
+          <div class="sm:col-span-2">
+            <label class="block text-sm font-semibold text-gray-700 mb-1.5" for="c-msg">सन्देश *</label>
+            <textarea id="c-msg" rows="4" placeholder="तपाईंको जिज्ञासा वा सन्देश यहाँ लेख्नुहोस्..."
+              class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-forest outline-none resize-none transition"></textarea>
+          </div>
+          <div class="sm:col-span-2">
+            <button onclick="submitForm()" class="w-full sm:w-auto bg-forest hover:bg-forest-light text-white font-bold px-10 py-3.5 rounded-xl transition flex items-center justify-center gap-2 text-base">
+              <i data-lucide="send" class="w-5 h-5"></i>
+              सन्देश पठाउनुहोस्
+            </button>
+          </div>
+        </div>
+        <!-- Success msg -->
+        <div id="form-success" class="hidden mt-4 bg-forest-xlight border border-forest text-forest text-sm font-semibold px-5 py-3 rounded-xl flex items-center gap-2">
+          <i data-lucide="check-circle" class="w-5 h-5"></i>
+          तपाईंको सन्देश प्राप्त भयो! हामी छिट्टै सम्पर्क गर्नेछौं।
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Map embed placeholder -->
+    <div class="mt-10 rounded-2xl overflow-hidden shadow-md h-64 bg-forest-xlight flex items-center justify-center">
+      <div class="text-center text-gray-500">
+        <i data-lucide="map" class="w-12 h-12 mx-auto text-forest opacity-40"></i>
+        <p class="mt-2 text-sm font-medium text-gray-400">Google Map — कैलाली, सुदूरपश्चिम</p>
+        <p class="text-xs text-gray-400">(Embed Google Maps API key required)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer class="bg-gray-900 text-gray-300" aria-label="Footer">
+  <div class="max-w-7xl mx-auto px-4 py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+    <!-- Brand -->
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-10 h-10 rounded-xl bg-forest flex items-center justify-center">
+          <svg viewBox="0 0 48 48" fill="none" class="w-7 h-7" aria-hidden="true">
+            <path d="M24 38 L24 16" stroke="#fef3c7" stroke-width="2" stroke-linecap="round"/>
+            <ellipse cx="19" cy="20" rx="4" ry="7" fill="#f59e0b" transform="rotate(-20 19 20)"/>
+            <ellipse cx="29" cy="20" rx="4" ry="7" fill="#f59e0b" transform="rotate(20 29 20)"/>
+            <path d="M24 28 Q18 22 14 26 Q18 32 24 28Z" fill="#6ee7b7"/>
+          </svg>
+        </div>
+        <div>
+          <div class="font-extrabold text-white text-sm">मानस कृषि सहकारी</div>
+          <div class="text-xs text-amber">संस्था लि. • कैलाली</div>
+        </div>
+      </div>
+      <p class="text-gray-400 text-sm leading-relaxed mb-4">किसानहरूको जीवनस्तर उकास्न समर्पित — आधुनिक कृषि र वित्तीय सेवाहरूमार्फत।</p>
+      <!-- Social -->
+      <div class="flex gap-3">
+        <a href="#" aria-label="Facebook" class="w-9 h-9 bg-white/10 hover:bg-blue-600 rounded-lg flex items-center justify-center transition">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube" class="w-9 h-9 bg-white/10 hover:bg-red-600 rounded-lg flex items-center justify-center transition">
+          <i data-lucide="youtube" class="w-4 h-4"></i>
+        </a>
+        <a href="#" aria-label="WhatsApp" class="w-9 h-9 bg-white/10 hover:bg-green-600 rounded-lg flex items-center justify-center transition">
+          <i data-lucide="message-circle" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick links -->
+    <div>
+      <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wide">द्रुत लिंकहरू</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#hero" class="hover:text-amber transition flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>गृहपृष्ठ</a></li>
+        <li><a href="#about" class="hover:text-amber transition flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>हाम्रो बारेमा</a></li>
+        <li><a href="#services" class="hover:text-amber transition flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>सेवाहरू</a></li>
+        <li><a href="#notices" class="hover:text-amber transition flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>सूचना पाटी</a></li>
+        <li><a href="#calculator" class="hover:text-amber transition flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>ब्याज क्याल्कुलेटर</a></li>
+        <li><a href="#contact" class="hover:text-amber transition flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>सम्पर्क</a></li>
+      </ul>
+    </div>
+
+    <!-- Resources -->
+    <div>
+      <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wide">उपयोगी स्रोत</h4>
+      <ul class="space-y-2 text-sm">
+        <li><a href="https://www.rbb.com.np" target="_blank" class="hover:text-amber transition flex items-center gap-2"><i data-lucide="external-link" class="w-3 h-3"></i>राष्ट्रिय बाणिज्य बैंक</a></li>
+        <li><a href="https://www.nrb.org.np" target="_blank" class="hover:text-amber transition flex items-center gap-2"><i data-lucide="external-link" class="w-3 h-3"></i>नेपाल राष्ट्र बैंक</a></li>
+        <li><a href="https://www.doae.gov.np" target="_blank" class="hover:text-amber transition flex items-center gap-2"><i data-lucide="external-link" class="w-3 h-3"></i>कृषि विभाग, नेपाल</a></li>
+        <li><a href="https://www.deprosc.org.np" target="_blank" class="hover:text-amber transition flex items-center gap-2"><i data-lucide="external-link" class="w-3 h-3"></i>DEPROSC Nepal</a></li>
+        <li><a href="#" class="hover:text-amber transition flex items-center gap-2"><i data-lucide="external-link" class="w-3 h-3"></i>सहकारी विभाग</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact brief -->
+    <div>
+      <h4 class="text-white font-bold mb-4 text-sm uppercase tracking-wide">सम्पर्क विवरण</h4>
+      <ul class="space-y-3 text-sm">
+        <li class="flex gap-2 items-start">
+          <i data-lucide="map-pin" class="w-4 h-4 text-amber shrink-0 mt-0.5"></i>
+          <span>ढकैरी गाउँपालिका, कैलाली, सुदूरपश्चिम, नेपाल</span>
+        </li>
+        <li class="flex gap-2 items-center">
+          <i data-lucide="phone" class="w-4 h-4 text-amber shrink-0"></i>
+          <a href="tel:09152345678" class="hover:text-amber transition">०९१-५२३४५६</a>
+        </li>
+        <li class="flex gap-2 items-center">
+          <i data-lucide="mail" class="w-4 h-4 text-amber shrink-0"></i>
+          <a href="mailto:info@manascooperative.coop.np" class="hover:text-amber transition text-xs break-all">info@manascooperative.coop.np</a>
+        </li>
+        <li class="flex gap-2 items-start">
+          <i data-lucide="clock" class="w-4 h-4 text-amber shrink-0 mt-0.5"></i>
+          <span>आइत–शुक्र: ९–५ बजे<br/>शनि: ९–१ बजे</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Copyright bar -->
+  <div class="border-t border-gray-800 px-4 py-5">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2 text-xs text-gray-500">
+      <span>© २०८२ मानस कृषि सहकारी संस्था लि. — सर्वाधिकार सुरक्षित</span>
+      <span>दर्ता नं. KAI-COOP-2065/001 | सहकारी विभाग, नेपाल</span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ════════════════════════════════════════════
+     SCROLL-TO-TOP BUTTON
+════════════════════════════════════════════ -->
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+  aria-label="Scroll to top"
+  class="fixed bottom-6 right-5 w-12 h-12 bg-forest text-white rounded-full shadow-lg hover:bg-forest-light transition opacity-0 translate-y-4 pointer-events-none"
+  style="transition: opacity 0.3s, transform 0.3s;">
+  <i data-lucide="arrow-up" class="w-5 h-5 mx-auto"></i>
+</button>
+
+
+<!-- ════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════ -->
+<script>
+  // ── Init Lucide icons ──
+  lucide.createIcons();
+
+  // ── Mobile menu toggle ──
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const icon = document.getElementById('menu-icon');
+    menu.classList.toggle('hidden');
+    // swap icon
+    if (menu.classList.contains('hidden')) {
+      icon.setAttribute('data-lucide', 'menu');
+    } else {
+      icon.setAttribute('data-lucide', 'x');
+    }
+    lucide.createIcons();
+  }
+
+  // ── Language switcher ──
+  let currentLang = 'ne';
+  function setLang(lang) {
+    currentLang = lang;
+
+    // Toggle logo
+    document.getElementById('logo-ne').classList.toggle('hidden', lang !== 'ne');
+    document.getElementById('logo-en').classList.toggle('hidden', lang !== 'en');
+    document.getElementById('logo-sub-ne').classList.toggle('hidden', lang !== 'ne');
+    document.getElementById('logo-sub-en').classList.toggle('hidden', lang !== 'en');
+
+    // Update nav links text
+    document.querySelectorAll('.nav-link').forEach(el => {
+      el.textContent = el.dataset[lang] || el.textContent;
+    });
+
+    // Update CTA button
+    const cta = document.getElementById('nav-cta');
+    if (cta) {
+      cta.querySelector('span') ? cta.querySelector('span').textContent = cta.dataset[lang] : null;
+    }
+
+    // Visual indicator
+    document.getElementById('lang-ne').classList.toggle('bg-amber', lang === 'ne');
+    document.getElementById('lang-ne').classList.toggle('text-white', lang === 'ne');
+    document.getElementById('lang-en').classList.toggle('bg-amber', lang === 'en');
+    document.getElementById('lang-en').classList.toggle('text-white', lang === 'en');
+  }
+
+  // ── Loan EMI Calculator ──
+  function calcLoan() {
+    const P = parseFloat(document.getElementById('loan-amt').value);
+    const rAnnual = parseFloat(document.getElementById('loan-rate').value);
+    const n = parseInt(document.getElementById('loan-months').value);
+
+    if (!P || P <= 0 || !n || n <= 0) {
+      alert('कृपया सही रकम र अवधि भर्नुहोस्।');
+      return;
+    }
+
+    const r = rAnnual / 100 / 12;
+    let emi;
+    if (r === 0) {
+      emi = P / n;
+    } else {
+      emi = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    }
+    const total = emi * n;
+    const interest = total - P;
+
+    document.getElementById('emi-out').textContent      = 'रू. ' + fmt(emi);
+    document.getElementById('interest-out').textContent = 'रू. ' + fmt(interest);
+    document.getElementById('total-out').textContent    = 'रू. ' + fmt(total);
+    document.getElementById('loan-result').classList.remove('hidden');
+  }
+
+  // ── Dividend Calculator ──
+  function calcDividend() {
+    const shares = parseInt(document.getElementById('shares').value);
+    if (!shares || shares <= 0) {
+      alert('कृपया शेयर संख्या भर्नुहोस्।');
+      return;
+    }
+    const investment = shares * 100;
+    const dividend   = investment * 0.12;
+
+    document.getElementById('invest-out').textContent  = 'रू. ' + fmt(investment);
+    document.getElementById('dividend-out').textContent= 'रू. ' + fmt(dividend);
+    document.getElementById('div-result').classList.remove('hidden');
+  }
+
+  // Format number with commas (Nepali style)
+  function fmt(n) {
+    return Math.round(n).toLocaleString('en-IN');
+  }
+
+  // ── Contact Form mock submit ──
+  function submitForm() {
+    const name = document.getElementById('c-name').value.trim();
+    const phone = document.getElementById('c-phone').value.trim();
+    const msg = document.getElementById('c-msg').value.trim();
+    if (!name || !phone || !msg) {
+      alert('कृपया नाम, फोन र सन्देश भर्नुहोस्।');
+      return;
+    }
+    document.getElementById('form-success').classList.remove('hidden');
+    document.getElementById('form-success').classList.add('flex');
+    document.getElementById('c-name').value  = '';
+    document.getElementById('c-phone').value = '';
+    document.getElementById('c-msg').value   = '';
+    lucide.createIcons();
+  }
+
+  // ── Scroll-to-top button ──
+  const scrollBtn = document.getElementById('scroll-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      scrollBtn.style.opacity = '1';
+      scrollBtn.style.transform = 'translateY(0)';
+      scrollBtn.style.pointerEvents = 'auto';
+    } else {
+      scrollBtn.style.opacity = '0';
+      scrollBtn.style.transform = 'translateY(1rem)';
+      scrollBtn.style.pointerEvents = 'none';
+    }
+  });
+
+  // ── Active nav link on scroll ──
+  const sections = ['hero','about','services','notices','calculator','contact'];
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && window.scrollY >= el.offsetTop - 100) current = id;
+    });
+    document.querySelectorAll('.nav-link').forEach(link => {
+      const href = link.getAttribute('href').replace('#','');
+      link.classList.toggle('bg-forest-xlight', href === current);
+      link.classList.toggle('text-forest', href === current);
+    });
+  });
+</script>
+
+</body>
+</html>
