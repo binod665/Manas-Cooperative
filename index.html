@@ -3,22 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="मानस कृषि सहकारी संस्था लिमिटेड — टीकापुर १ कैलाली , नेपाल। किसानहरूको आर्थिक समृद्धि र कृषि विकासका लागि समर्पित।" />
-  <meta name="keywords" content="agriculture cooperative, kailali nepal, krishi sahakari, farm loan, micro savings, Manas cooperative" />
+  <meta name="description" content="मानस कृषि सहकारी संस्था लिमिटेड — टीकापुर १ कैलाली , नेपाल।" />
   <title>मानस कृषि सहकारी संस्था लिमिटेड | Manas Agriculture Cooperative</title>
 
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Fonts: Mukta & Inter -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
-  <!-- AOS Animation Library -->
+  <!-- AOS Animation CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <script>
@@ -32,7 +31,7 @@
             cream:   '#fdfaf4',
           },
           fontFamily: {
-            sans: ['Mukta', 'Inter', 'sans-serif'],
+            sans: ['Mukta', 'sans-serif'],
           },
         }
       }
@@ -41,46 +40,36 @@
 
   <style>
     html { scroll-behavior: smooth; overflow-x: hidden; }
-    body { font-family: 'Mukta', 'Inter', sans-serif; overflow-x: hidden; }
+    body { font-family: 'Mukta', sans-serif; overflow-x: hidden; }
     
     .hero-overlay {
       background: linear-gradient(135deg, rgba(10,40,20,0.85) 0%, rgba(26,107,58,0.7) 50%, rgba(217,119,6,0.6) 100%);
     }
 
-    @keyframes ticker {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .ticker-inner { animation: ticker 30s linear infinite; }
+    @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .ticker-inner { animation: ticker 25s linear infinite; }
     .ticker-inner:hover { animation-play-state: paused; }
 
     .card-lift { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .card-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+    .card-lift:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.10); }
 
     .leaf-divider::before {
-      content: '🌿'; display: block; text-align: center; font-size: 1.6rem; margin-bottom: 0.5rem; opacity: 0.8; animation: bounce 2s infinite;
+      content: '🌿'; display: block; text-align: center; font-size: 1.5rem; margin-bottom: 0.5rem; opacity: 0.8; animation: bounce 2s infinite;
     }
     @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
-
-    .glass-panel {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
   </style>
 </head>
 
-<body class="bg-white text-gray-800 antialiased">
+<body class="bg-gray-50 text-gray-800 antialiased">
 
 <!-- TOP UTILITY BAR -->
 <div class="bg-forest-dark text-white text-sm py-1.5 px-4 z-50 relative">
   <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
     <div class="flex items-center gap-2 overflow-hidden max-w-xs sm:max-w-md">
-      <span class="shrink-0 bg-amber text-white text-xs font-bold px-2 py-0.5 rounded uppercase tracking-wide animate-pulse">सूचना</span>
+      <span class="shrink-0 bg-amber text-white text-xs font-bold px-2 py-0.5 rounded uppercase tracking-wide">सूचना</span>
       <div class="overflow-hidden">
         <div class="ticker-inner whitespace-nowrap text-amber-light">
-          🌾 धान बिउ वितरण कार्यक्रम असार ५ गतेदेखि सुरु &nbsp;•&nbsp; 📢 साधारण सभा: पौष १५, २०८२ &nbsp;•&nbsp; 💰 लाभांश वितरण शुरू भएको छ &nbsp;•&nbsp; 🌾 धान बिउ वितरण कार्यक्रम असार ५ गतेदेखि सुरु &nbsp;•&nbsp; 📢 साधारण सभा: पौष १५, २०८२ &nbsp;•&nbsp; 💰 लाभांश वितरण शुरू भएको छ
+          🌾 धान बिउ वितरण कार्यक्रम असार ५ गतेदेखि सुरु &nbsp;•&nbsp; 📢 साधारण सभा: पुष १५ &nbsp;•&nbsp; 💰 लाभांश वितरण शुरू भएको छ &nbsp;•&nbsp; 🌾 धान बिउ वितरण कार्यक्रम असार ५ गतेदेखि सुरु
         </div>
       </div>
     </div>
@@ -98,362 +87,10 @@
 <header id="main-header" class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm transition-all duration-300">
   <nav class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between" aria-label="Main Navigation">
     <a href="#hero" class="flex items-center gap-3 group">
-      <!-- User's Actual Logo -->
-      <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-md p-1 group-hover:scale-105 transition">
-        <img src="photo1583206181-eraseBG-preview.jpg" alt="Manas Krishi Sahakari Logo" class="w-full h-full object-contain rounded-full" onerror="this.src='https://via.placeholder.com/150?text=Logo'"/>
+      <!-- Your Logo -->
+      <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow p-0.5 group-hover:scale-105 transition">
+        <img src="photo1583206181-eraseBG-preview.jpg" alt="Logo" class="w-full h-full object-contain rounded-full" onerror="this.src='https://via.placeholder.com/100?text=Logo'"/>
       </div>
       <div class="leading-tight">
-        <div class="font-extrabold text-forest text-lg sm:text-xl leading-none" id="logo-ne">मानस कृषि सहकारी संस्था लि.</div>
-        <div class="font-extrabold text-forest text-lg sm:text-xl leading-none hidden" id="logo-en">Manas Agriculture Coop Ltd.</div>
-        <div class="text-xs text-amber font-bold tracking-wide mt-1" id="logo-sub-ne"> • टीकापुर-१, कैलाली</div>
-        <div class="text-xs text-amber font-bold tracking-wide mt-1 hidden" id="logo-sub-en"> • Tikapur-1, Kailali</div>
-      </div>
-    </a>
-
-    <!-- Desktop Nav Links -->
-    <ul class="hidden lg:flex items-center gap-2 text-[15px] font-bold">
-      <li><a href="#hero" class="nav-link px-3 py-2 rounded-lg text-forest hover:bg-forest-xlight transition" data-ne="गृहपृष्ठ">गृहपृष्ठ</a></li>
-      <li><a href="#about" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:bg-forest-xlight hover:text-forest transition" data-ne="हाम्रो बारेमा">हाम्रो बारेमा</a></li>
-      <li><a href="#services" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:bg-forest-xlight hover:text-forest transition" data-ne="सेवाहरू">सेवाहरू</a></li>
-      <li><a href="#gallery" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:bg-forest-xlight hover:text-forest transition" data-ne="ग्यालरी">ग्यालरी</a></li>
-      <li><a href="#notices" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:bg-forest-xlight hover:text-forest transition" data-ne="सूचना पाटी">सूचना पाटी</a></li>
-      <li><a href="#calculator" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:bg-forest-xlight hover:text-forest transition" data-ne="क्याल्कुलेटर">क्याल्कुलेटर</a></li>
-      <li><a href="#contact" class="nav-link px-3 py-2 rounded-lg text-gray-600 hover:bg-forest-xlight hover:text-forest transition" data-ne="सम्पर्क">सम्पर्क</a></li>
-    </ul>
-
-    <div class="flex items-center gap-3">
-      <a href="#member" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-forest to-forest-light hover:scale-105 text-white text-sm font-bold px-5 py-2.5 rounded-full transition shadow-lg" id="nav-cta" data-ne="सदस्य बन्नुहोस्">
-        <i data-lucide="user-plus" class="w-4 h-4"></i>
-        <span>सदस्य बन्नुहोस्</span>
-      </a>
-      <button id="menu-btn" onclick="toggleMenu()" class="lg:hidden p-2 rounded-lg text-forest hover:bg-forest-xlight transition">
-        <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
-      </button>
-    </div>
-  </nav>
-
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-100 bg-white px-4 pb-4 absolute w-full shadow-lg">
-    <ul class="flex flex-col gap-1 pt-3 text-sm font-semibold">
-      <li><a href="#hero" onclick="toggleMenu()" class="block px-3 py-2.5 rounded-lg text-forest bg-forest-xlight">गृहपृष्ठ</a></li>
-      <li><a href="#about" onclick="toggleMenu()" class="block px-3 py-2.5 rounded-lg text-gray-700 hover:bg-forest-xlight">हाम्रो बारेमा</a></li>
-      <li><a href="#services" onclick="toggleMenu()" class="block px-3 py-2.5 rounded-lg text-gray-700 hover:bg-forest-xlight">सेवाहरू</a></li>
-      <li><a href="#gallery" onclick="toggleMenu()" class="block px-3 py-2.5 rounded-lg text-gray-700 hover:bg-forest-xlight">ग्यालरी</a></li>
-      <li><a href="#notices" onclick="toggleMenu()" class="block px-3 py-2.5 rounded-lg text-gray-700 hover:bg-forest-xlight">सूचना पाटी</a></li>
-      <li><a href="#calculator" onclick="toggleMenu()" class="block px-3 py-2.5 rounded-lg text-gray-700 hover:bg-forest-xlight">ब्याज क्याल्कुलेटर</a></li>
-      <li><a href="#contact" onclick="toggleMenu()" class="block px-3 py-2.5 rounded-lg text-gray-700 hover:bg-forest-xlight">सम्पर्क</a></li>
-    </ul>
-  </div>
-</header>
-
-<!-- HERO SECTION -->
-<section id="hero" class="relative min-h-screen flex items-center overflow-hidden" style="background: url('https://images.unsplash.com/photo-1592982537447-6f233424090b?w=1600&q=80') center/cover fixed;">
-  <div class="hero-overlay absolute inset-0"></div>
-  <div class="absolute inset-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2260%22 height=%2260%22><text y=%2245%22 font-size=%2240%22>🌾</text></svg>'); background-size: 60px 60px;"></div>
-
-  <div class="relative z-10 max-w-7xl mx-auto px-4 py-24 grid lg:grid-cols-2 gap-12 items-center">
-    <!-- Headline -->
-    <div class="text-white" data-aos="fade-right" data-aos-duration="1000">
-      <div class="inline-flex items-center gap-2 bg-amber/20 border border-amber/40 text-amber-light text-sm font-semibold px-4 py-1.5 rounded-full mb-6 backdrop-blur-sm">
-        <span>📍</span>
-        <span>टीकापुर-१, कैलाली, सुदूरपश्चिम प्रदेश</span>
-      </div>
-      <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight mb-4 drop-shadow-lg">
-        कृषि क्रान्ति र<br/>
-        <span class="text-amber-light text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-amber-500">आर्थिक समृद्धिको</span><br/>
-        सहयात्री
-      </h1>
-      <p class="text-gray-100 text-lg sm:text-xl mb-8 max-w-lg font-medium drop-shadow-md leading-relaxed">
-        मानस कृषि सहकारी संस्था — किसानहरूलाई आधुनिक कृषि ज्ञान, वित्तीय सेवा र सामुदायिक साझेदारीमार्फत समृद्ध जीवनतर्फ अग्रसर गर्दै।
-      </p>
-      <div class="flex flex-wrap gap-4">
-        <a href="#about" class="flex items-center gap-2 bg-forest hover:bg-forest-light text-white font-bold px-7 py-3.5 rounded-full shadow-lg hover:shadow-2xl hover:-translate-y-1 transition duration-300">
-          <i data-lucide="info" class="w-5 h-5"></i> हाम्रो बारेमा जान्नुहोस्
-        </a>
-        <a href="#member" class="flex items-center gap-2 bg-amber hover:bg-amber-light text-white font-bold px-7 py-3.5 rounded-full shadow-lg hover:shadow-2xl hover:-translate-y-1 transition duration-300 text-gray-900">
-          <i data-lucide="user-plus" class="w-5 h-5"></i> सदस्य बन्नुहोस्
-        </a>
-      </div>
-    </div>
-
-    <!-- Stats Card (Glassmorphism) -->
-    <div class="hidden lg:block" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-      <div class="glass-panel rounded-3xl p-8 text-white shadow-2xl border-t border-l border-white/30">
-        <h2 class="text-xl font-bold text-amber-300 mb-6 flex items-center gap-2">
-          <i data-lucide="award" class="w-6 h-6"></i> हाम्रा मुख्य उपलब्धिहरू
-        </h2>
-        <div class="grid grid-cols-2 gap-5">
-          <div class="bg-white/10 hover:bg-white/20 transition rounded-2xl p-5 text-center cursor-pointer">
-            <div class="text-4xl font-black text-white">२,८००+</div>
-            <div class="text-sm text-amber-200 mt-1 font-semibold">सक्रिय सदस्यहरू</div>
-          </div>
-          <div class="bg-white/10 hover:bg-white/20 transition rounded-2xl p-5 text-center cursor-pointer">
-            <div class="text-4xl font-black text-white">१५+</div>
-            <div class="text-sm text-amber-200 mt-1 font-semibold">वर्षको अनुभव</div>
-          </div>
-          <div class="bg-white/10 hover:bg-white/20 transition rounded-2xl p-5 text-center cursor-pointer">
-            <div class="text-4xl font-black text-white">रू. ४Cr+</div>
-            <div class="text-sm text-amber-200 mt-1 font-semibold">कर्जा लगानी</div>
-          </div>
-          <div class="bg-white/10 hover:bg-white/20 transition rounded-2xl p-5 text-center cursor-pointer">
-            <div class="text-4xl font-black text-white">१२%</div>
-            <div class="text-sm text-amber-200 mt-1 font-semibold">वार्षिक लाभांश</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-white/80 cursor-pointer" onclick="document.getElementById('about').scrollIntoView()">
-    <i data-lucide="chevrons-down" class="w-10 h-10"></i>
-  </div>
-</section>
-
-<!-- ABOUT SECTION -->
-<section id="about" class="py-24 bg-cream relative overflow-hidden" aria-label="About Us">
-  <div class="max-w-7xl mx-auto px-4">
-    <div class="text-center mb-16 leaf-divider" data-aos="fade-up">
-      <span class="text-sm font-bold uppercase tracking-widest text-amber">हाम्रो परिचय</span>
-      <h2 class="text-3xl sm:text-5xl font-extrabold text-forest mt-2">मानस कृषि सहकारी संस्था</h2>
-    </div>
-
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
-      <!-- Image side -->
-      <div class="relative" data-aos="fade-right">
-        <div class="rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] relative">
-          <img src="https://images.unsplash.com/photo-1595841696677-6489ff3f8cd1?w=800&q=80" alt="Farmers working" class="w-full h-full object-cover hover:scale-105 transition duration-700" loading="lazy" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-        </div>
-        <div class="absolute -bottom-6 -right-6 bg-gradient-to-br from-amber-400 to-amber-600 text-white rounded-3xl p-6 shadow-2xl border-4 border-white animate-bounce-slow">
-          <div class="text-3xl font-black leading-none">२०७३</div>
-          <div class="text-sm font-bold mt-1 opacity-90">स्थापना वर्ष</div>
-        </div>
-      </div>
-
-      <!-- Text side -->
-      <div data-aos="fade-left">
-        <p class="text-gray-700 text-lg leading-relaxed mb-6 font-medium">
-          <strong class="text-forest text-xl">मानस कृषि सहकारी संस्था लि.</strong> कैलाली जिल्लाका किसान र ग्रामीण समुदायहरूलाई कृषि उत्पादन वृद्धि, आर्थिक स्वावलम्बन र सामूहिक विकासमा सहयोग गर्न स्थापना भएको संस्था हो।
-        </p>
-        
-        <!-- Chairman Message Block -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 mb-8 relative">
-          <i data-lucide="quote" class="w-10 h-10 text-amber/20 absolute top-4 right-4"></i>
-          <p class="text-gray-600 italic mb-4">"हामी हाम्रा शेयर सदस्य र किसानहरूको उत्पादनलाई उचित बजार मूल्य दिलाउन र कृषिमा आधुनिकीकरण ल्याउन कटिबद्ध छौं। मानस सहकारी तपाईंको आफ्नै संस्था हो।"</p>
-          <div class="flex items-center gap-3">
-            <div class="w-12 h-12 bg-forest-xlight rounded-full flex items-center justify-center text-forest font-bold text-xl">अ</div>
-            <div>
-              <h4 class="font-bold text-forest">अध्यक्षको नाम</h4>
-              <p class="text-xs text-gray-500">अध्यक्ष, सञ्चालक समिति</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid sm:grid-cols-2 gap-5">
-          <div class="bg-white shadow-md border-t-4 border-forest rounded-2xl p-6 card-lift">
-            <div class="flex items-center gap-2 mb-3">
-              <div class="p-2 bg-forest-xlight rounded-lg"><i data-lucide="target" class="w-5 h-5 text-forest"></i></div>
-              <h3 class="font-extrabold text-forest text-base">हाम्रो लक्ष्य</h3>
-            </div>
-            <p class="text-gray-600 text-sm leading-relaxed">किसानहरूलाई आधुनिक कृषि ज्ञान र वित्तीय पहुँच प्रदान गरी दिगो आर्थिक विकास गर्नु।</p>
-          </div>
-          <div class="bg-white shadow-md border-t-4 border-amber rounded-2xl p-6 card-lift">
-            <div class="flex items-center gap-2 mb-3">
-              <div class="p-2 bg-amber-xlight rounded-lg"><i data-lucide="eye" class="w-5 h-5 text-amber"></i></div>
-              <h3 class="font-extrabold text-earth text-base">हाम्रो दृष्टिकोण</h3>
-            </div>
-            <p class="text-gray-600 text-sm leading-relaxed">समृद्ध कृषि समुदाय — जहाँ प्रत्येक किसानले आफ्नो श्रमको उचित मूल्य पाउन सकोस्।</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES SECTION (Kept similar but added AOS and polished) -->
-<section id="services" class="py-24 bg-white" aria-label="Our Services">
-  <div class="max-w-7xl mx-auto px-4">
-    <div class="text-center mb-16 leaf-divider" data-aos="fade-up">
-      <span class="text-sm font-bold uppercase tracking-widest text-amber">हाम्रा सेवाहरू</span>
-      <h2 class="text-3xl sm:text-5xl font-extrabold text-forest mt-2">हामीले प्रदान गर्ने सुविधाहरू</h2>
-    </div>
-
-    <div class="grid lg:grid-cols-2 gap-10 mb-16">
-      <!-- Agricultural Services -->
-      <div class="bg-forest-xlight rounded-3xl overflow-hidden shadow-lg card-lift border border-forest/10" data-aos="fade-up" data-aos-delay="100">
-        <div class="bg-gradient-to-r from-forest to-forest-light px-8 py-6 flex items-center gap-4">
-          <div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center shadow-inner">
-            <i data-lucide="tractor" class="w-8 h-8 text-white"></i>
-          </div>
-          <div>
-            <h3 class="text-white font-extrabold text-2xl">कृषि सेवाहरू</h3>
-            <p class="text-green-100 text-sm">Agriculture Support</p>
-          </div>
-        </div>
-        <div class="p-8 space-y-4">
-          <!-- Item -->
-          <div class="flex gap-4 items-start bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition">
-            <div class="w-12 h-12 bg-forest/10 rounded-xl flex items-center justify-center shrink-0">
-              <i data-lucide="seed" class="w-6 h-6 text-forest"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-forest text-base">बिउ तथा मलखाद वितरण</h4>
-              <p class="text-gray-500 text-sm mt-1">उन्नत जातका बिउ, रासायनिक तथा जैविक मलखाद सदस्यहरूलाई सहुलियत मूल्यमा।</p>
-            </div>
-          </div>
-          <!-- Item -->
-          <div class="flex gap-4 items-start bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition">
-            <div class="w-12 h-12 bg-forest/10 rounded-xl flex items-center justify-center shrink-0">
-              <i data-lucide="graduation-cap" class="w-6 h-6 text-forest"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-forest text-base">कृषि प्रशिक्षण</h4>
-              <p class="text-gray-500 text-sm mt-1">आधुनिक खेती प्रविधि, जैविक खेती र पोषण बगैँचा सम्बन्धी विशेषज्ञ तालिम।</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Financial Services -->
-      <div class="bg-amber-xlight rounded-3xl overflow-hidden shadow-lg card-lift border border-amber/10" data-aos="fade-up" data-aos-delay="200">
-        <div class="bg-gradient-to-r from-amber to-amber-500 px-8 py-6 flex items-center gap-4">
-          <div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center shadow-inner">
-            <i data-lucide="landmark" class="w-8 h-8 text-white"></i>
-          </div>
-          <div>
-            <h3 class="text-white font-extrabold text-2xl">वित्तीय सेवाहरू</h3>
-            <p class="text-yellow-100 text-sm">Financial Solutions</p>
-          </div>
-        </div>
-        <div class="p-8 space-y-4">
-          <!-- Item -->
-          <div class="flex gap-4 items-start bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition">
-            <div class="w-12 h-12 bg-amber/10 rounded-xl flex items-center justify-center shrink-0">
-              <i data-lucide="piggy-bank" class="w-6 h-6 text-amber"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-earth text-base">नियमित तथा लघु बचत</h4>
-              <p class="text-gray-500 text-sm mt-1">नियमित र दैनिक बचत गर्ने सदस्यहरूलाई आकर्षक ब्याज दरमा बचत सुविधा।</p>
-            </div>
-          </div>
-          <!-- Item -->
-          <div class="flex gap-4 items-start bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition">
-            <div class="w-12 h-12 bg-amber/10 rounded-xl flex items-center justify-center shrink-0">
-              <i data-lucide="banknote" class="w-6 h-6 text-amber"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-earth text-base">कृषि तथा पशुपालन कर्जा</h4>
-              <p class="text-gray-500 text-sm mt-1">खेती, गाईभैंसी पालन, बाख्रा पालन र कृषि व्यापारका लागि सहुलियत दरमा ऋण।</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- NEW: PHOTO GALLERY SECTION -->
-<section id="gallery" class="py-24 bg-gray-50" aria-label="Photo Gallery">
-  <div class="max-w-7xl mx-auto px-4">
-    <div class="text-center mb-16 leaf-divider" data-aos="fade-up">
-      <span class="text-sm font-bold uppercase tracking-widest text-amber">तस्बिरहरू</span>
-      <h2 class="text-3xl sm:text-5xl font-extrabold text-forest mt-2">हाम्रो ग्यालरी</h2>
-    </div>
-
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      <div class="overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition duration-300 cursor-pointer group" data-aos="zoom-in" data-aos-delay="100">
-        <img src="https://images.unsplash.com/photo-1592982537447-6f233424090b?w=400&q=80" alt="Farm" class="w-full h-48 object-cover group-hover:scale-110 transition duration-500">
-      </div>
-      <div class="overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition duration-300 cursor-pointer group" data-aos="zoom-in" data-aos-delay="150">
-        <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=400&q=80" alt="Agriculture" class="w-full h-48 object-cover group-hover:scale-110 transition duration-500">
-      </div>
-      <div class="overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition duration-300 cursor-pointer group" data-aos="zoom-in" data-aos-delay="200">
-        <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=400&q=80" alt="Cows" class="w-full h-48 object-cover group-hover:scale-110 transition duration-500">
-      </div>
-      <div class="overflow-hidden rounded-2xl shadow-sm hover:shadow-xl transition duration-300 cursor-pointer group" data-aos="zoom-in" data-aos-delay="250">
-        <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=400&q=80" alt="Tractor" class="w-full h-48 object-cover group-hover:scale-110 transition duration-500">
-      </div>
-    </div>
-    <div class="text-center mt-10" data-aos="fade-up">
-      <button class="bg-white border-2 border-forest text-forest hover:bg-forest hover:text-white font-bold py-2.5 px-8 rounded-full transition duration-300">थप तस्बिरहरू हेर्नुहोस्</button>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-gray-900 text-gray-300 relative overflow-hidden" aria-label="Footer">
-  <!-- Decorative Top Border -->
-  <div class="h-2 w-full bg-gradient-to-r from-forest via-amber to-forest"></div>
-  
-  <div class="max-w-7xl mx-auto px-4 py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
-    <!-- Brand -->
-    <div data-aos="fade-up" data-aos-delay="100">
-      <div class="flex items-center gap-3 mb-6">
-        <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center p-1">
-          <!-- Actual Logo in Footer -->
-          <img src="photo1583206181-eraseBG-preview.jpg" alt="Logo" class="w-full h-full object-contain rounded-full" onerror="this.src='https://via.placeholder.com/150?text=Logo'"/>
-        </div>
-        <div>
-          <div class="font-extrabold text-white text-lg">मानस कृषि सहकारी</div>
-          <div class="text-sm text-amber font-semibold">टीकापुर-१, कैलाली</div>
-        </div>
-      </div>
-      <p class="text-gray-400 text-sm leading-relaxed mb-6">किसानहरूको जीवनस्तर उकास्न समर्पित — आधुनिक कृषि र वित्तीय सेवाहरूमार्फत।</p>
-      <!-- Social -->
-      <div class="flex gap-4">
-        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-blue-600 hover:scale-110 rounded-full flex items-center justify-center transition duration-300"><i data-lucide="facebook" class="w-5 h-5"></i></a>
-        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-red-600 hover:scale-110 rounded-full flex items-center justify-center transition duration-300"><i data-lucide="youtube" class="w-5 h-5"></i></a>
-      </div>
-    </div>
-    
-    <!-- Quick links & Contact (Simplified for brevity, same as your code but with AOS) -->
-    <div data-aos="fade-up" data-aos-delay="200">
-      <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-widest">सम्पर्क विवरण</h4>
-      <ul class="space-y-4 text-sm">
-        <li class="flex gap-3 items-start"><i data-lucide="map-pin" class="w-5 h-5 text-amber shrink-0"></i><span>टिकापुर-१, कैलाली, नेपाल</span></li>
-        <li class="flex gap-3 items-center"><i data-lucide="phone" class="w-5 h-5 text-amber shrink-0"></i><a href="tel:9848500665" class="hover:text-amber transition">९८४८५००६६५</a></li>
-        <li class="flex gap-3 items-center"><i data-lucide="mail" class="w-5 h-5 text-amber shrink-0"></i><a href="mailto:manascooptkp@gmail.com" class="hover:text-amber transition">manascooptkp@gmail.com</a></li>
-        <li class="flex gap-3 items-center"><i data-lucide="globe" class="w-5 h-5 text-amber shrink-0"></i><a href="https://manascoop.com.np" class="hover:text-amber transition">manascoop.com.np</a></li>
-      </ul>
-    </div>
-  </div>
-  
-  <div class="border-t border-gray-800 px-4 py-6 text-center">
-    <div class="text-sm text-gray-500 font-medium">
-      © २०२६ मानस कृषि सहकारी संस्था लि. — सर्वाधिकार सुरक्षित। 
-    </div>
-  </div>
-</footer>
-
-<!-- SCROLL-TO-TOP BUTTON -->
-<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-8 right-8 w-14 h-14 bg-amber hover:bg-amber-light text-white rounded-full shadow-2xl transition-all duration-300 opacity-0 translate-y-10 z-50 flex items-center justify-center pointer-events-none hover:-translate-y-1">
-  <i data-lucide="arrow-up" class="w-6 h-6"></i>
-</button>
-
-<!-- JAVASCRIPT -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  // Initialize Icons & Animations
-  lucide.createIcons();
-  AOS.init({ duration: 800, once: true, offset: 100 });
-
-  // Scroll to top & Sticky Header functionality
-  const scrollBtn = document.getElementById('scroll-top');
-  const header = document.getElementById('main-header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      scrollBtn.style.opacity = '1';
-      scrollBtn.style.transform = 'translateY(0)';
-      scrollBtn.style.pointerEvents = 'auto';
-      header.classList.add('shadow-md');
-    } else {
-      scrollBtn.style.opacity = '0';
-      scrollBtn.style.transform = 'translateY(2rem)';
-      scrollBtn.style.pointerEvents = 'none';
-      header.classList.remove('shadow-md');
-    }
-  });
-</script>
-
-</body>
-</html>
+        <div class="font-extrabold text-forest text-lg leading-none" id="logo-ne">मानस कृषि सहकारी लि.</div>
+        <div class="font-extrabold text-forest text-lg leading-none hidden" id="logo-en
